@@ -36,6 +36,7 @@ export default function Explore({navigation}){
         require("./resourse/game.png"),
         require("./resourse/game.png")
     */
+   
     const Gigants = [
         {
           txt: "16 cygni B b ",

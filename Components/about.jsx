@@ -62,13 +62,15 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
     image:{
         marginTop:  Platform.OS === "ios" ? 50 : 50,
+        
+        marginLeft:  Platform.OS === "ios" ? 20 : 50,
         marginBottom:  Platform.OS === "ios" ? 20 : 50,
         width:  Platform.OS === "ios" ? 350 : 50,
         height:  Platform.OS === "ios" ? 430 : 50,
     },
     slide:{
         flex:1,
-        alignItems: 'center',
+        alignItems: 'start',
         width: '100%',
         height: '100%',
         backgroundColor: "black",
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
         paddingBottom: Platform.OS === "ios" ? 110: 50
     },
     title:{
-        marginLeft: Platform.OS === "ios" ? 0 : 50,
+        marginLeft: Platform.OS === "ios" ? 27 : 50,
         marginright: Platform.OS === "ios" ? 0 : 50,
         
         marginBottom: Platform.OS === "ios" ? 25 : 50,
