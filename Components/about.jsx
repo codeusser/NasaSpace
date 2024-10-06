@@ -5,27 +5,28 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Image, ScrollView } from 'react-native';
 import { Pressable } from 'react-native';
 import { Platform } from 'react-native';
+import Home from './Home';
  
 const slides = [
   {
     key: 1,
-    title: 'Interactive Lessons',
-    text: 'Description.\nSay something cool',
-    image: require('./planet1.png'),
+    title: 'Fascinating information',
+    text: 'Get ready to explore beyond our Solar System and find out fascinating facts about Exoplanets. ',
+    image: require('./resourse/babau.png'),
     backgroundColor: '#59b2ab',
   },
   {
     key: 2,
-    title: 'Cool informations',
-    text: 'Other coolasdfasdfasdfasdfasdfasdfasdfasdf stuff',
-    image: require('./planet1.png'),
+    title: 'Interactive learning ',
+    text: 'Broaden your understanding of the discovery of Exoplanets in an entertaining and interactive way',
+    image: require('./resourse/slide2.png'),
     backgroundColor: '#febe29',
   },
   {
     key: 3,
-    title: 'Infos about planes',
-    text: 'I\'m already out of descriptions\n\nLorem ipsum basdfasdfasdfasdfla bla bla',
-    image: require('./planet1.png'),
+    title: 'Fun ways to test your knowledge',
+    text: 'Put your newly acquired knowledge to the test by solving thrilling challenges and playing educational games.',
+    image: require('./resourse/cevas.png'),
     backgroundColor: '#22bcb5',
   }
 ];
@@ -38,8 +39,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.slide}>
         <Text style={styles.title}>{item.title}</Text>
-             <Image source={item.image} style={styles.image}/>
         <Text style={styles.text}>{item.text}</Text>
+        <Image source={item.image} style={styles.image}/>
         
       </View>
     );
@@ -47,11 +48,12 @@ export default class App extends React.Component {
   _onDone = () => {
     // User finished the introduction. Show real app through
     // navigation or simply by controlling state
+    
     this.setState({ showRealApp: true });
   }
   render() {
     if (this.state.showRealApp) {
-      return <App />;
+      return <Home/>;
     } else {
       return <AppIntroSlider renderItem={this._renderItem} data={slides} onDone={this._onDone}/>;
     }
@@ -59,10 +61,10 @@ export default class App extends React.Component {
 }
 const styles = StyleSheet.create({
     image:{
-        marginTop:  Platform.OS === "ios" ? 100 : 50,
-        marginBottom:  Platform.OS === "ios" ? 65 : 50,
+        marginTop:  Platform.OS === "ios" ? 50 : 50,
+        marginBottom:  Platform.OS === "ios" ? 20 : 50,
         width:  Platform.OS === "ios" ? 350 : 50,
-        height:  Platform.OS === "ios" ? 350 : 50,
+        height:  Platform.OS === "ios" ? 430 : 50,
     },
     slide:{
         flex:1,
@@ -76,6 +78,8 @@ const styles = StyleSheet.create({
     title:{
         marginLeft: Platform.OS === "ios" ? 0 : 50,
         marginright: Platform.OS === "ios" ? 0 : 50,
+        
+        marginBottom: Platform.OS === "ios" ? 25 : 50,
         color: "white",
         fontSize: "40px"
     },
@@ -83,7 +87,7 @@ const styles = StyleSheet.create({
         marginRight: Platform.OS === "ios" ? 30 : 50,
         marginLeft: Platform.OS === "ios" ? 30 : 50,
         color: "white",
-        fontSize: "20px"
+        fontSize: "15px"
     }
 
 })

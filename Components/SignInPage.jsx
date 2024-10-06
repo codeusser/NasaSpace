@@ -10,8 +10,8 @@ export default function SignInPage({navigation}) {
         <>
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.headers}>Space App</Text>
-                <Image style={styles.image} source={require('./rock.png')} />  
+                <Text style={styles.headers}>EXODUCATION</Text>
+                <Image style={styles.image} source={require('./resourse/racheta.png')} />  
                 <Pressable style={styles.button} onPress={ () => { 
                     navigation.navigate("about");
                 }}>
@@ -45,8 +45,10 @@ const styles = StyleSheet.create({
     image:{
         marginRight: Platform.OS === "ios" ? 40 : 0 ,
         width: Platform.OS === "ios" ? 400 : 0, 
-        height: Platform.OS === "ios" ? 400 : 0,
-        marginBottom: Platform.OS === "ios" ? 75 : 0,
+        height: Platform.OS === "ios" ? 500 : 0,
+        
+        marginLeft: Platform.OS === "ios" ? 100 : 0,
+        marginBottom: Platform.OS === "ios" ? 10 : 0,
     },
     button: {
         marginTop: Platform.OS === "ios" ? 16 : 0,
